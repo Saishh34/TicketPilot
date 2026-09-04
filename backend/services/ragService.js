@@ -1,4 +1,4 @@
-const { ChromaClient } = require("chromadb");
+const { ChromaClient, CloudClient } = require("chromadb");
 const {
     GoogleGenerativeAIEmbeddings
 } = require("@langchain/google-genai");
@@ -8,28 +8,40 @@ const embeddings = new GoogleGenerativeAIEmbeddings({
     apiKey: process.env.GOOGLE_API_KEY
 });
 
-const chroma = new ChromaClient({
-    host: "127.0.0.1",
-    port: 8000
-});
+// Use Chroma Cloud when cloud credentials are configured.
+// Otherwise, use the local Chroma server for development.
+const chroma = process.env.CHROMA_API_KEY
+    ? new CloudClient({
+        apiKey: process.env.CHROMA_API_KEY,
+        tenant: process.env.CHROMA_TENANT,
+        database: process.env.CHROMA_DATABASE
+    })
+    : new ChromaClient({
+        host: process.env.CHROMA_HOST || "127.0.0.1",
+        port: Number(process.env.CHROMA_PORT || 8000)
+    });
 
 const COLLECTION_NAME = "ticketpilot_knowledge";
 
 async function getCollection() {
     return await chroma.getOrCreateCollection({
-        name: COLLECTION_NAME
+        name: COLLECTION_NAME,
+        embeddingFunction: null
     });
 }
 
 function chunkText(text, chunkSize = 500) {
     const cleaned = String(text).replace(/\s+/g, " ").trim();
+
     if (!cleaned) return [];
 
     const words = cleaned.split(" ");
     const chunks = [];
 
     for (let i = 0; i < words.length; i += chunkSize) {
-        chunks.push(words.slice(i, i + chunkSize).join(" "));
+        chunks.push(
+            words.slice(i, i + chunkSize).join(" ")
+        );
     }
 
     return chunks;
@@ -53,7 +65,9 @@ async function addDocument(text, source = "unknown") {
 
     const vectors = await embeddings.embedDocuments(chunks);
 
-    const ids = chunks.map((_, index) => makeChunkId(source, index));
+    const ids = chunks.map((_, index) =>
+        makeChunkId(source, index)
+    );
 
     await collection.upsert({
         ids,
@@ -80,7 +94,11 @@ async function searchKnowledgeBase(query, numberOfResults = 3) {
     const results = await collection.query({
         queryEmbeddings: [queryEmbedding],
         nResults: numberOfResults,
-        include: ["documents", "metadatas", "distances"]
+        include: [
+            "documents",
+            "metadatas",
+            "distances"
+        ]
     });
 
     const documents = results.documents?.[0] || [];
@@ -98,7 +116,7 @@ async function searchKnowledgeBase(query, numberOfResults = 3) {
             chunk: metadatas[index]?.chunk ?? null,
             distance: distances[index] ?? null
         }))
-        .filter(doc =>
+        .filter((doc) =>
             doc.distance !== null &&
             doc.distance <= MAX_DISTANCE
         );
