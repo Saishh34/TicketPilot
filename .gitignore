@@ -1,0 +1,6 @@
+.env
+node_modules/
+__pycache__/
+*.pyc
+chroma_data/
+rag/chroma_data/
