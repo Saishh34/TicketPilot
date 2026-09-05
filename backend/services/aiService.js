@@ -1,7 +1,7 @@
 const { ChatGoogleGenerativeAI } = require("@langchain/google-genai");
 
 const model = new ChatGoogleGenerativeAI({
-    model: "gemini-3.8-flash",
+    model: "gemini-3.7-flash",
     apiKey: process.env.GOOGLE_API_KEY
 });
 
