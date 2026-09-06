@@ -11,3 +11,8 @@
 </p>
 
 ---
+##  Overview
+
+TicketPilot is an AI-powered customer support platform designed to automate ticket analysis, response generation, and routine support operations while keeping human agents in control of complex cases.
+
+The system combines AI-based ticket classification, priority and sentiment analysis, Retrieval-Augmented Generation (RAG), knowledge-base retrieval, automated response assistance, bulk ticket processing, and human-in-the-loop review into a unified customer support workflow.
