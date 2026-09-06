@@ -1,0 +1,14 @@
+warning: in the working copy of 'backend/services/aiService.js', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/backend/services/aiService.js b/backend/services/aiService.js[m
+[1mindex 8d09df2..0e4c55b 100644[m
+[1m--- a/backend/services/aiService.js[m
+[1m+++ b/backend/services/aiService.js[m
+[36m@@ -1,7 +1,7 @@[m
+ const { ChatGoogleGenerativeAI } = require("@langchain/google-genai");[m
+ [m
+ const model = new ChatGoogleGenerativeAI({[m
+[31m-    model: "gemini-3.8-flash",[m
+[32m+[m[32m    model: "gemini-3.7-flash",[m
+     apiKey: process.env.GOOGLE_API_KEY[m
+ });[m
+ [m
