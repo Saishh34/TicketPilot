@@ -85,3 +85,21 @@ flowchart LR
 
     REVIEW --> UI
 ```
+---
+
+##  Processing Pipeline
+
+**Ticket Input → React Dashboard → n8n → AI Classification → Backend API → RAG → Gemini AI → AI Response → Human Review → Resolution**
+
+| Stage | Function |
+|---|---|
+| Ticket Input | Receive customer support issues |
+| AI Classification | Identify category, priority, sentiment, and review requirement |
+| Workflow Automation | Process tickets through n8n |
+| Backend API | Handle ticket processing through the Node.js API |
+| RAG Pipeline | Retrieve relevant information from the knowledge base |
+| Gemini AI | Generate an AI-assisted response using retrieved information |
+| Human Review | Review, approve, edit, or take over tickets |
+| Resolution | Resolve the ticket or continue human handling |
+
+---
