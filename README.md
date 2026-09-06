@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <b>AI-powered customer support automation with human-in-the-loop intelligence</b>
+  <b>AI-powered customer support automation with human control</b>
 </p>
 
 <p align="center">
