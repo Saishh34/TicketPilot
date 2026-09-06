@@ -151,3 +151,27 @@ The web dashboard provides a centralized interface for managing customer support
 </p>
 
 ---
+
+---
+
+##  Technology Stack
+
+| Category | Technology |
+|---|---|
+| Programming Language | JavaScript |
+| Frontend | React |
+| Build Tool | Vite |
+| Styling | CSS |
+| UI Icons | Lucide React |
+| File Processing | SheetJS |
+| Workflow Automation | n8n |
+| Backend API | Node.js / Express |
+| Artificial Intelligence | Google Gemini |
+| RAG | ChromaDB / Vector Retrieval |
+| Knowledge Base | Document-based Knowledge Base |
+| Frontend Deployment | Vercel |
+| Backend Deployment | Render |
+| Workflow Hosting | n8n Cloud |
+| Version Control | Git / GitHub |
+
+---
