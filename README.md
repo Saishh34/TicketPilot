@@ -144,10 +144,10 @@ The web dashboard provides a centralized interface for managing customer support
   <img src="bulk-import.png" alt="Bulk Ticket Import" width="900">
 </p>
 
-### Ticket Resolution
+### AI Copilot
 
 <p align="center">
-  <img src="ai-copilot.png" alt="Ticket Resolution" width="900">
+  <img src="ai copilot.png" alt="Ticket Resolution" width="900">
 </p>
 
 ---
