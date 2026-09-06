@@ -108,11 +108,7 @@ flowchart LR
 
 ##  Dashboard
 
-TicketPilot provides a centralized support dashboard for managing incoming tickets, AI analysis, human review, and resolution.
-
----
-
-##  Dashboard
+TicketPilot provides a centralized support dashboard for managing incoming tickets, AI analysis, human review, and resolution
 
 The web dashboard provides a centralized interface for managing customer support tickets, AI analysis, human review, bulk imports, and ticket resolution.
 
@@ -215,5 +211,31 @@ Once the application is running, open:
 ```text
 https://ticketpilot-beta.vercel.app/
 ```
+
+---
+
+---
+
+##  Configuration
+
+TicketPilot uses environment variables and frontend configuration to connect the application with the deployed backend API and n8n workflows.
+
+### Backend API Configuration
+
+The frontend communicates with the deployed Node.js / Express backend through the configured API endpoint.
+
+```text
+https://ticketpilot-t2r5.onrender.com
+```
+
+### n8n Workflow Configuration
+
+AI ticket processing is handled through the n8n workflow webhook configured in the frontend.
+
+The workflow connects the frontend ticket submission to AI classification, backend processing, RAG retrieval, and response generation.
+
+### Knowledge Base Configuration
+
+The RAG pipeline uses documents stored in the project's `knowledge_base` directory to provide grounded information for AI-generated responses.
 
 ---
