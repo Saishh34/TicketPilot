@@ -103,3 +103,51 @@ flowchart LR
 | Resolution | Resolve the ticket or continue human handling |
 
 ---
+
+---
+
+##  Dashboard
+
+TicketPilot provides a centralized support dashboard for managing incoming tickets, AI analysis, human review, and resolution.
+
+---
+
+##  Dashboard
+
+The web dashboard provides a centralized interface for managing customer support tickets, AI analysis, human review, bulk imports, and ticket resolution.
+
+### Main Dashboard
+
+<p align="center">
+  <img src="n8n.png" alt="TicketPilot Dashboard" width="900">
+</p>
+
+<p align="center">
+  <img src="dashboard.png" alt="TicketPilot Dashboard" width="900">
+</p>
+
+### Ticket Analysis
+
+<p align="center">
+  <img src="ticket-analysis.png" alt="AI Ticket Analysis" width="900">
+</p>
+
+### Human Review
+
+<p align="center">
+  <img src="human-review.png" alt="Human Review Workflow" width="900">
+</p>
+
+### Bulk Ticket Import
+
+<p align="center">
+  <img src="bulk-import.png" alt="Bulk Ticket Import" width="900">
+</p>
+
+### Ticket Resolution
+
+<p align="center">
+  <img src="ai-copilot.png" alt="Ticket Resolution" width="900">
+</p>
+
+---
