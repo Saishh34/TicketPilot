@@ -33,3 +33,54 @@ The system combines AI-based ticket classification, priority and sentiment analy
 12. **Bulk Ticket Import** — Process multiple support tickets from CSV, XLSX, and XLS files.
 13. **Workflow Automation** — Automate ticket processing through n8n workflows.
 14. **Ticket Dashboard** — Monitor tickets, AI analysis, responses, review status, and resolution in one interface.
+
+The architecture is designed so that the frontend, workflow automation, backend API, RAG pipeline, and human review layers remain separated, making the system easier to scale with additional support channels, knowledge sources, and AI-powered capabilities.
+
+---
+
+##  System Architecture
+
+```mermaid
+flowchart LR
+
+    USER[" Customer / Support Agent"]
+
+    subgraph FRONTEND[" FRONTEND"]
+        UI["React Dashboard"]
+        TICKET["Ticket Management"]
+        BULK["Bulk Import"]
+        REVIEW["Human Review"]
+
+        UI --> TICKET
+        UI --> BULK
+        UI --> REVIEW
+    end
+
+    subgraph AUTOMATION[" WORKFLOW AUTOMATION"]
+        WEBHOOK["n8n Webhook"]
+        CLASSIFY["AI Classification"]
+        RESPONSE["Customer Response Workflow"]
+
+        WEBHOOK --> CLASSIFY
+    end
+
+    subgraph BACKEND[" BACKEND"]
+        API["Node.js / Express API"]
+        RAG["RAG Pipeline"]
+        KB[("Knowledge Base")]
+        GEMINI["Gemini AI"]
+
+        API --> RAG
+        RAG --> KB
+        RAG --> GEMINI
+    end
+
+    USER --> UI
+
+    UI --> WEBHOOK
+    CLASSIFY --> API
+
+    API --> RESPONSE
+    RESPONSE --> REVIEW
+
+    REVIEW --> UI
