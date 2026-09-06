@@ -175,3 +175,45 @@ The web dashboard provides a centralized interface for managing customer support
 | Version Control | Git / GitHub |
 
 ---
+
+---
+
+##  Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Saishh34/TicketPilot.git
+cd TicketPilot
+```
+
+### 2. Install Frontend Dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+### 3. Configure the Application
+
+Configure the required API and workflow endpoints in the frontend configuration.
+
+The application connects to the deployed backend API and n8n workflow for AI-powered ticket processing.
+
+### 4. Run the Application
+
+Start the frontend development server using:
+
+```bash
+npm run dev
+```
+
+### 5. Open the Dashboard
+
+Once the application is running, open:
+
+```text
+https://ticketpilot-beta.vercel.app/
+```
+
+---
