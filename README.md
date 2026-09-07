@@ -112,14 +112,16 @@ TicketPilot provides a centralized support dashboard for managing incoming ticke
 
 The web dashboard provides a centralized interface for managing customer support tickets, AI analysis, human review, bulk imports, and ticket resolution.
 
-### Main Dashboard
+### Automation
 
 <p align="center">
   <img src="n8n.png" alt="TicketPilot Dashboard" width="900">
 </p>
 
+### Main Dashboard
+
 <p align="center">
-  <img src="dashboard.png" alt="TicketPilot Dashboard" width="900">
+  <img src="dashboard (2).png" alt="TicketPilot Dashboard" width="900">
 </p>
 
 ### Ticket Analysis
