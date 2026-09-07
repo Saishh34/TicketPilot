@@ -104,8 +104,6 @@ flowchart LR
 
 ---
 
----
-
 ##  Dashboard
 
 TicketPilot provides a centralized support dashboard for managing incoming tickets, AI analysis, human review, and resolution
@@ -147,8 +145,6 @@ The web dashboard provides a centralized interface for managing customer support
 <p align="center">
   <img src="ai copilot.png" alt="Ticket Resolution" width="900">
 </p>
-
----
 
 ---
 
